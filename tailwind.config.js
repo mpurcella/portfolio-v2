@@ -43,7 +43,7 @@ export default {
                 },
             },
             opacity: {
-                12: '.12',
+                15: '.15',
             },
             textUnderlineOffset: {
                 6: '6px',
@@ -106,7 +106,7 @@ export default {
     plugins: [
         ({ addComponents, addUtilities, addBase }) => {
             const navigationLinkBase =
-                'transition-colors duration-200 ease-linear outline-none focus-visible:outline-1 focus-visible:transition-none';
+                'transition-colors duration-200 ease-linear outline-none focus-visible:outline-1 focus-visible:transition-none focus-visible:outline-purple';
 
             const buttonBase =
                 'inline-flex px-32 py-16 transition-colors duration-200 ease-linear text-16 md:text-18 border-2 rounded-full font-source-sans-pro uppercase font-semibold outline-none focus-visible:transition-none';
@@ -130,24 +130,19 @@ export default {
                         [`@apply ${buttonBase} border-purple text-purple hover:text-white hover:bg-purple focus-visible:text-white focus-visible:bg-purple`]:
                             {},
                     },
-                    '&-tertiary': {
-                        [`@apply ${buttonBase} border-white text-white hover:text-white hover:border-black-100 hover:bg-black-100 focus-visible:text-white focus-visible:bg-black-100 focus-visible:border-black-100`]:
-                            {},
-                    },
                 },
                 '.navigation-link': {
                     '&-primary': {
-                        [`@apply ${navigationLinkBase} text-grey-200 lowercase hover:text-white text-24 font-medium md:text-20 focus-visible:outline-offset-4 focus-visible:text-white
-                        focus-visible:outline-purple`]: {},
+                        [`@apply ${navigationLinkBase} text-grey-200 lowercase hover:text-white text-24 font-medium md:text-20 focus-visible:outline-offset-4 focus-visible:text-white`]:
+                            {},
                     },
                     '&-secondary': {
-                        [`@apply ${navigationLinkBase} text-purple font-extrabold hover:text-white focus-visible:outline-offset-0 focus-visible:text-white
-                        focus-visible:outline-purple`]: {},
+                        [`@apply ${navigationLinkBase} text-purple font-bold hover:text-red focus-visible:outline-offset-0 focus-visible:text-red`]:
+                            {},
                     },
                     '&-tertiary': {
-                        [`@apply ${navigationLinkBase} text-grey-200 font-bold hover:text-white 
-                        focus-visible:outline-offset-0 focus-visible:text-white
-                        focus-visible:outline-white`]: {},
+                        [`@apply ${navigationLinkBase} text-purple font-black hover:text-white focus-visible:outline-offset-0 focus-visible:text-white`]:
+                            {},
                     },
                 },
                 '.social-link': {

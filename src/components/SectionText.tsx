@@ -5,7 +5,7 @@ type SectionTextProps = {
 
 const SectionText = ({ className, children }: SectionTextProps) => {
     return (
-        <p className={`${className} text-center text-20 font-medium leading-normal`}>{children}</p>
+        <p className={`${className} text-center text-18 leading-normal md:text-20`}>{children}</p>
     );
 };
 

@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { FaGithub, FaLinkedinIn, FaEnvelope, FaFileAlt } from 'react-icons/fa';
-import Resume from '/documents/mike_purcella_resume.pdf';
+import { FaGithub, FaLinkedinIn, FaEnvelope, FaCodepen } from 'react-icons/fa';
 
 type SocialListProps = {
     listClassName: string;
@@ -23,15 +22,15 @@ const SocialList = ({ listClassName, linkClassName }: SocialListProps) => {
         },
         {
             id: uuidv4(),
-            url: 'mailto:mjpurcella@gmail.com',
-            label: 'Mike Purcella email address',
-            icon: <FaEnvelope />,
+            url: 'https://codepen.io/mpurcella',
+            label: 'Mike Purcella on CodePen',
+            icon: <FaCodepen />,
         },
         {
             id: uuidv4(),
-            url: Resume,
-            label: 'Mike Purcella resumé',
-            icon: <FaFileAlt />,
+            url: 'mailto:mjpurcella@gmail.com',
+            label: 'Mike Purcella email address',
+            icon: <FaEnvelope />,
         },
     ];
     return (

@@ -33,6 +33,16 @@ const NavigationList = ({ onClick }: NavigationListProps) => {
                     </li>
                 );
             })}
+            <li key={uuidv4()}>
+                <a
+                    href="/documents/mike_purcella_resume.pdf"
+                    className="inline-flex rounded-lg bg-purple px-16 py-8 text-24 font-medium lowercase text-white outline-none transition-colors duration-200 ease-linear hover:bg-red focus-visible:bg-red focus-visible:transition-none md:text-20"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span className="flex items-center gap-12">My Resume</span>
+                </a>
+            </li>
         </ul>
     );
 };

@@ -17,7 +17,7 @@ const Footer = () => {
                 </g>
             </svg>
             <>
-                <span className="sr-only">Social Media links</span>
+                <span className="sr-only">Social media and contact links</span>
                 <SocialList
                     listClassName="flex justify-center items-center gap-40"
                     linkClassName="social-link-primary"
@@ -27,7 +27,7 @@ const Footer = () => {
                 Created by{' '}
                 <a
                     href="https://github.com/mpurcella/portfolio-v2"
-                    className="navigation-link-secondary"
+                    className="navigation-link-tertiary"
                     aria-label="View code on GitHub"
                 >
                     me

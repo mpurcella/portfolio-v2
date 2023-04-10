@@ -76,7 +76,7 @@ const Header = () => {
                 >
                     <NavigationList onClick={closeNav} />
                     <>
-                        <span className="sr-only">Social media links</span>
+                        <span className="sr-only">Social media and contact links</span>
                         <SocialList
                             listClassName="flex gap-40 md:hidden"
                             linkClassName="social-link-primary"

@@ -88,6 +88,7 @@ const skills = [
 const SkillsList = () => {
     return (
         <ul className="flex flex-wrap justify-center gap-12">
+
             {skills.map((skill) => {
                 return (
                     <li

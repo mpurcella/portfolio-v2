@@ -21,7 +21,7 @@ const Hero = () => {
                 </>
                 <div className="relative -top-[40.26px] md:-top-[41.37px]">
                     <div className="relative flex flex-col items-center gap-52">
-                        <h1 className="text-center text-36 font-black uppercase text-white md:text-60">
+                        <h1 className="text-center text-40 font-black uppercase text-white md:text-60">
                             Hi, I&apos;m Mike&nbsp;Purcella
                         </h1>
                         <p className="text-center text-20 leading-normal text-white md:text-24">

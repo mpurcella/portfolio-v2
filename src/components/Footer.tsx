@@ -2,6 +2,7 @@ import SocialList from './SocialList';
 
 const Footer = () => {
     const year = new Date().getFullYear();
+
     return (
         <footer className="flex flex-col items-center gap-52 bg-black-100 px-28 py-72 md:px-60">
             <svg
@@ -27,7 +28,7 @@ const Footer = () => {
                 Created by{' '}
                 <a
                     href="https://github.com/mpurcella/portfolio-v2"
-                    className="navigation-link-secondary"
+                    className="navigation-link-tertiary"
                     aria-label="View code on GitHub"
                 >
                     me

@@ -11,7 +11,7 @@ const SectionHeading = ({ className, label }: SectionHeadingProps) => {
         //     {label}
         // </h2>
         <h2
-            className={`${className} relative from-red to-purple text-center text-32 font-bold md:text-40`}
+            className={`${className} relative from-red to-purple text-center text-32 font-bold md:text-36`}
         >
             {label}
         </h2>

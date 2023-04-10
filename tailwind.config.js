@@ -6,31 +6,62 @@ export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
-            backgroundImage: {
-                roses: "url('/images/backgrounds/roses-background.png')",
+            animation: {
+                'mouse-scroll': 'scroll 2s linear infinite',
+            },
+            borderRadius: {
+                xl: '2rem',
+            },
+            borderWidth: {
+                1: '1px',
             },
             fontFamily: {
-                sans: ['Gotham-Narrow', ...defaultTheme.fontFamily.sans],
+                'proxima-nova': ['Proxima Nova', ...defaultTheme.fontFamily.sans],
+                'source-sans-pro': ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
+            },
+            keyframes: {
+                scroll: {
+                    '0%': {
+                        opacity: 0,
+                        top: '0px',
+                    },
+                    '35%': {
+                        opacity: 0,
+                        top: '0px',
+                    },
+                    '50%': {
+                        opacity: 1,
+                    },
+                    '65%': {
+                        opacity: 0,
+                        top: 'calc(100% - 4px)',
+                    },
+                    '100%': {
+                        opacity: 0,
+                        top: 'calc(100% - 4px)',
+                    },
+                },
             },
             opacity: {
-                15: '.18',
+                12: '.12',
             },
-            rotate: {
-                22.5: '22.5deg',
+            textUnderlineOffset: {
+                6: '6px',
             },
         },
         colors: {
             transparent: 'transparent',
             black: {
-                100: '#1c1d1e',
-                200: '#151617',
-                300: '#101010',
-                400: '#080808',
+                100: '#141414',
+                200: '#101010',
             },
             grey: {
-                100: '#b5b3b3',
-                200: '#696969',
+                100: '#f0f0f0',
+                200: '#b5b3b3',
+                300: '#383838',
             },
+            purple: '#6e07f3',
+            red: '#ff073a',
             white: '#f8f8f8',
         },
         fontSize: {
@@ -39,37 +70,93 @@ export default {
             18: ['1.125rem'],
             20: ['1.25rem'],
             24: ['1.5rem'],
+            28: ['1.75rem'],
+            32: ['2rem'],
+            36: ['2.25rem'],
+            40: ['2.5rem'],
+            48: ['3rem'],
+            52: ['3.25rem'],
+            60: ['3.75rem'],
         },
         spacing: {
             0: '0rem',
             3: '0.188rem',
+            4: '0.25rem',
+            6: '0.375rem',
             8: '.5rem',
             12: '.75rem',
+            16: '1rem',
             20: '1.25rem',
             24: '1.5rem',
             28: '1.75rem',
             32: '2rem',
             40: '2.5rem',
+            44: '2.75rem',
+            48: '3rem',
             52: '3.25rem',
+            56: '3.5rem',
             60: '3.75rem',
             72: '4.5rem',
-            96: '6rem',
+            80: '5rem',
+            120: '7.5rem',
             full: '100%',
             screen: '100vh',
         },
     },
     plugins: [
         ({ addComponents, addUtilities, addBase }) => {
-            const navLinkBase =
-                'uppercase font-medium text-grey-100 transition-colors duration-200 ease-linear hover:text-white';
+            const navigationLinkBase =
+                'transition-colors duration-200 ease-linear outline-none focus-visible:outline-1 focus-visible:transition-none';
+
+            const buttonBase =
+                'inline-flex px-32 py-16 transition-colors duration-200 ease-linear text-16 md:text-18 border-2 rounded-full font-source-sans-pro uppercase font-semibold outline-none focus-visible:transition-none';
+
+            const socialLinkBase =
+                'block transition-colors duration-200 ease-linear outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:transition-none';
 
             addComponents({
-                '.navlink': {
+                '.button': {
                     '&-primary': {
-                        [`@apply ${navLinkBase} text-20 md:text-16`]: {},
+                        [`@apply ${buttonBase} border-purple text-purple hover:text-white hover:bg-purple focus-visible:text-white focus-visible:bg-purple focus-visible:text-white`]:
+                            {},
+                    },
+                },
+                '.button-link': {
+                    '&-primary': {
+                        [`@apply ${buttonBase} border-white text-white hover:bg-purple hover:border-purple focus-visible:text-white focus-visible:border-purple focus-visible:bg-purple focus-visible:text-white`]:
+                            {},
                     },
                     '&-secondary': {
-                        [`@apply ${navLinkBase} border-y border-b-grey-100 border-t-transparent hover:border-b-white text-14`]:
+                        [`@apply ${buttonBase} border-purple text-purple hover:text-white hover:bg-purple focus-visible:text-white focus-visible:bg-purple`]:
+                            {},
+                    },
+                    '&-tertiary': {
+                        [`@apply ${buttonBase} border-white text-white hover:text-white hover:border-black-100 hover:bg-black-100 focus-visible:text-white focus-visible:bg-black-100 focus-visible:border-black-100`]:
+                            {},
+                    },
+                },
+                '.navigation-link': {
+                    '&-primary': {
+                        [`@apply ${navigationLinkBase} text-grey-200 lowercase hover:text-white text-24 font-medium md:text-20 focus-visible:outline-offset-4 focus-visible:text-white
+                        focus-visible:outline-purple`]: {},
+                    },
+                    '&-secondary': {
+                        [`@apply ${navigationLinkBase} text-purple font-extrabold hover:text-white focus-visible:outline-offset-0 focus-visible:text-white
+                        focus-visible:outline-purple`]: {},
+                    },
+                    '&-tertiary': {
+                        [`@apply ${navigationLinkBase} text-grey-200 font-bold hover:text-white 
+                        focus-visible:outline-offset-0 focus-visible:text-white
+                        focus-visible:outline-white`]: {},
+                    },
+                },
+                '.social-link': {
+                    '&-primary': {
+                        [`@apply ${socialLinkBase} text-24 text-grey-200 hover:text-white focus-visible:outline-purple focus-visible:text-white`]:
+                            {},
+                    },
+                    '&-secondary': {
+                        [`@apply ${socialLinkBase} text-28 hover:text-purple text-black-100 focus-visible:outline-black-100 focus-visible:text-purple`]:
                             {},
                     },
                 },
@@ -87,7 +174,8 @@ export default {
             });
             addBase({
                 body: {
-                    '@apply text-white antialiased leading-none hide-scrollbar': {},
+                    '@apply font-proxima-nova antialiased leading-none hide-scrollbar bg-black-100':
+                        {},
                 },
             });
         },

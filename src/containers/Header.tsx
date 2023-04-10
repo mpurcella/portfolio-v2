@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import Rose from '../components/Rose';
 import HamburgerButton from '../components/HamburgerButton';
 import NavigationList from '../components/NavigationList';
 import SocialList from '../components/SocialList';
+import IconLink from '../components/IconLink';
 
 const useMediaQuery = (mediaQuery: string) => {
     const [mql] = useState(() => window.matchMedia(mediaQuery));
@@ -43,6 +42,12 @@ const Header = () => {
         }
     }, [isScreenWide]);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+        });
+    };
+
     useEffect(() => {
         if (isNavOpen) {
             document.body.classList.add('overflow-hidden');
@@ -52,16 +57,17 @@ const Header = () => {
     }, [isNavOpen]);
 
     return (
-        <header className="z-40 bg-black-300 px-20 py-28 md:px-60">
+        <header className="z-30 bg-black-100 p-28 md:px-60 md:py-28">
             <nav className="flex items-center justify-between">
-                <Link to="/" className="group flex items-center gap-12" onClick={closeNav}>
-                    <span className="sr-only">Mike Purcella Homepage</span>
-                    <Rose className="pointer-events-none w-full rotate-22.5 fill-grey-100 transition-colors duration-200 ease-linear group-hover:fill-white" />
-                </Link>
+                <IconLink
+                    svgClassName="pointer-events-none w-44 fill-white md:w-48"
+                    onClick={closeNav}
+                    onFocus={scrollToTop}
+                />
                 <HamburgerButton isNavOpen={isNavOpen} onClick={handleIsNavOpen} />
                 <div
                     className={classNames(
-                        'fixed top-96 flex h-[calc(100vh-96px)] w-full flex-col items-center justify-center gap-72 bg-black-200 navigation-list-transition md:static md:h-auto md:w-auto md:bg-transparent',
+                        'fixed top-0 z-30 flex h-screen w-full flex-col items-center justify-center gap-72 bg-black-200 navigation-list-transition md:static md:h-auto md:w-auto md:bg-transparent',
                         {
                             'right-0': isNavOpen,
                             'right-full': !isNavOpen,
@@ -69,7 +75,13 @@ const Header = () => {
                     )}
                 >
                     <NavigationList onClick={closeNav} />
-                    <SocialList className="flex gap-40 md:hidden" />
+                    <>
+                        <span className="sr-only">Social media links</span>
+                        <SocialList
+                            listClassName="flex gap-40 md:hidden"
+                            linkClassName="social-link-primary"
+                        />
+                    </>
                 </div>
             </nav>
         </header>

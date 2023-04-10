@@ -9,9 +9,9 @@ const HamburgerButton = ({ isNavOpen, onClick }: HamburgerButtonProps) => {
     return (
         <button
             type="button"
-            className="flex h-24 w-28 flex-col justify-around md:hidden"
+            className="z-40 flex h-24 w-28 flex-col justify-around outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-purple md:hidden"
             onClick={onClick}
-            aria-label={isNavOpen ? 'Close Menu' : 'Open Menu'}
+            aria-label={isNavOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isNavOpen ? true : false}
         >
             <span

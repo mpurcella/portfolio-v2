@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 type NavigationLinkProps = {
     url: string;
@@ -7,9 +7,9 @@ type NavigationLinkProps = {
 };
 const NavigationLink = ({ url, label, onClick }: NavigationLinkProps) => {
     return (
-        <NavLink to={url} className="navlink-primary" onClick={onClick}>
+        <Link to={url} className="navigation-link-primary" reloadDocument onClick={onClick}>
             {label}
-        </NavLink>
+        </Link>
     );
 };
 

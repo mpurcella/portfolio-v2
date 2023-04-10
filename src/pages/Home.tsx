@@ -1,7 +1,6 @@
-import Hero from '../components/Hero';
+import Hero from '../sections/Hero';
 import About from '../sections/About';
-import Technologies from '../sections/Technologies';
-import Work from '../sections/Work';
+import Projects from '../sections/Projects';
 import Contact from '../sections/Contact';
 
 const Home = () => {
@@ -9,8 +8,7 @@ const Home = () => {
         <>
             <Hero />
             <About />
-            <Technologies />
-            <Work />
+            <Projects />
             <Contact />
         </>
     );

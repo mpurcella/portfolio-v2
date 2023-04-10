@@ -8,29 +8,24 @@ type NavigationListProps = {
 const navLinks = [
     {
         id: uuidv4(),
-        url: '#',
+        url: '#about',
         label: 'About',
     },
     {
         id: uuidv4(),
-        url: '#',
-        label: 'Technologies',
+        url: '#projects',
+        label: 'projects',
     },
     {
         id: uuidv4(),
-        url: '#',
-        label: 'Work',
-    },
-    {
-        id: uuidv4(),
-        url: '#',
+        url: '#contact',
         label: 'Contact',
     },
 ];
 
 const NavigationList = ({ onClick }: NavigationListProps) => {
     return (
-        <ul className="flex flex-col items-center gap-28 md:flex-row">
+        <ul className="flex flex-col items-center gap-40 md:flex-row">
             {navLinks.map((navLink) => {
                 return (
                     <li key={navLink.id}>

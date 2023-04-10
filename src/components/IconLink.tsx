@@ -1,14 +1,25 @@
-import SocialList from './SocialList';
+import { Link } from 'react-router-dom';
 
-const Footer = () => {
-    const year = new Date().getFullYear();
+type IconLinkProps = {
+    svgClassName: string;
+    onClick?: () => void;
+    onFocus: () => void;
+};
+
+const IconLink = ({ svgClassName, onClick, onFocus }: IconLinkProps) => {
     return (
-        <footer className="flex flex-col items-center gap-52 bg-black-100 px-28 py-72 md:px-60">
+        <Link
+            to="/"
+            className="z-30 outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-purple"
+            onClick={onClick}
+            onFocus={onFocus}
+        >
+            <span className="sr-only">Mike Purcella homepage</span>
             <svg
                 version="1.2"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 682 380"
-                className="pointer-events-none w-52 fill-white"
+                className={svgClassName}
             >
                 <title>M Logo</title>
                 <g>
@@ -16,26 +27,8 @@ const Footer = () => {
                     <path d="m602 378.6c-43.2 0-78.1-34.9-78.1-78 0-43.2 34.9-78.1 78.1-78.1 43.1 0 78 34.9 78 78.1 0 43.1-34.9 78-78 78zm50.4-78c0-27.9-22.5-50.5-50.4-50.5-28 0-50.5 22.6-50.5 50.5 0 27.9 22.5 50.5 50.5 50.5 27.9 0 50.4-22.6 50.4-50.5z" />
                 </g>
             </svg>
-            <>
-                <span className="sr-only">Social Media links</span>
-                <SocialList
-                    listClassName="flex justify-center items-center gap-40"
-                    linkClassName="social-link-primary"
-                />
-            </>
-            <p className="text-18 font-medium text-white">
-                Created by{' '}
-                <a
-                    href="https://github.com/mpurcella/portfolio-v2"
-                    className="navigation-link-secondary"
-                    aria-label="View code on GitHub"
-                >
-                    me
-                </a>{' '}
-                &#9400; {year}
-            </p>
-        </footer>
+        </Link>
     );
 };
 
-export default Footer;
+export default IconLink;

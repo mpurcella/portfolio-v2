@@ -1,11 +1,13 @@
 import { v4 as uuidv4 } from 'uuid';
-import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaEnvelope, FaFileAlt } from 'react-icons/fa';
+import Resume from '/documents/mike_purcella_resume.pdf';
 
 type SocialListProps = {
-    className: string;
+    listClassName: string;
+    linkClassName: string;
 };
 
-const SocialList = ({ className }: SocialListProps) => {
+const SocialList = ({ listClassName, linkClassName }: SocialListProps) => {
     const socialLinks = [
         {
             id: uuidv4(),
@@ -22,19 +24,25 @@ const SocialList = ({ className }: SocialListProps) => {
         {
             id: uuidv4(),
             url: 'mailto:mjpurcella@gmail.com',
-            label: 'Mike Purcella Email',
+            label: 'Mike Purcella email address',
             icon: <FaEnvelope />,
+        },
+        {
+            id: uuidv4(),
+            url: Resume,
+            label: 'Mike Purcella resumé',
+            icon: <FaFileAlt />,
         },
     ];
     return (
-        <ul className={className}>
+        <ul className={listClassName}>
             {socialLinks.map((socialLink) => {
                 return (
                     <li key={socialLink.id}>
                         <span className="sr-only">{socialLink.label}</span>
                         <a
                             href={socialLink.url}
-                            className="text-24"
+                            className={linkClassName}
                             target="_blank"
                             rel="noopener noreferrer"
                         >

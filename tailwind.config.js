@@ -45,6 +45,9 @@ export default {
             maxWidth: {
                 440: '27.5rem',
             },
+            opacity: {
+                15: '.15',
+            },
         },
         colors: {
             transparent: 'transparent',
@@ -100,11 +103,11 @@ export default {
     },
     plugins: [
         ({ addComponents, addUtilities, addBase }) => {
-            const navigationLinkBase =
-                'transition-colors duration-200 ease-linear outline-none focus-visible:outline-1  focus-visible:outline-purple focus-visible:transition-none';
-
             const buttonBase =
                 'text-16 md:text-18 inline-flex px-32 py-16 transition-colors duration-200 ease-linear border-2 rounded-full font-source-sans-pro uppercase font-semibold outline-none focus-visible:transition-none';
+
+            const navigationLinkBase =
+                'transition-colors duration-200 ease-linear outline-none focus-visible:outline-1  focus-visible:outline-purple focus-visible:transition-none';
 
             const socialLinkBase =
                 'block transition-colors duration-200 ease-linear outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:transition-none';
@@ -116,6 +119,10 @@ export default {
                         focus-visible:bg-purple
                         focus-visible:text-white`]: {},
                     },
+                    '&-submitting': {
+                        [`@apply ${buttonBase} border-grey-200 text-black-100 bg-grey-200 items-center gap-12`]:
+                            {},
+                    },
                 },
                 '.button-link': {
                     '&-primary': {
@@ -126,6 +133,10 @@ export default {
                         [`@apply ${buttonBase} border-purple text-purple hover:text-white hover:bg-purple focus-visible:text-white focus-visible:bg-purple`]:
                             {},
                     },
+                },
+                '.loading-spinner': {
+                    '@apply flex h-16 w-16 animate-spin rounded-full border-[3px] border-black-100 border-t-transparent text-black-100':
+                        {},
                 },
                 '.navigation-link': {
                     '&-primary': {

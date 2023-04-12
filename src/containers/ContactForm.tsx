@@ -1,38 +1,150 @@
-import Button from '../components/Button';
-import { FaPaperPlane } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import ContactFormLabel from '../components/ContactFormLabel';
-import ContactFormInput from '../components/ContactFormInput';
-import { FaRegCommentAlt } from 'react-icons/fa';
+import { FaRegCommentAlt, FaPaperPlane } from 'react-icons/fa';
+import 'react-toastify/dist/ReactToastify.css';
 
-const ContactForm = () => {
+type FormValues = {
+    access_key: string;
+    from_name: string;
+    name: string;
+    email: string;
+    message: string;
+};
+
+type ContactForm = {
+    successToast: () => void;
+    errorToast: () => void;
+};
+
+const ContactForm = ({ successToast, errorToast }: ContactForm) => {
+    const [isSuccessful, setIsSuccessful] = useState(false);
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { isSubmitting, isSubmitSuccessful },
+    } = useForm<FormValues>({
+        defaultValues: {
+            name: '',
+            email: '',
+            message: '',
+        },
+    });
+
+    const onSubmit: SubmitHandler<FormValues> = async (data) => {
+        try {
+            const resp = await fetch('https://api.web3forms.com/submit', {
+                method: 'Post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await resp.json();
+
+            if (result.success) {
+                setIsSuccessful(true);
+            } else {
+                setIsSuccessful(false);
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    useEffect(() => {
+        if (isSubmitSuccessful && isSuccessful) {
+            reset();
+        } else {
+            reset({}, { keepValues: true });
+        }
+    }, [isSubmitSuccessful, isSuccessful, reset]);
+
+    useEffect(() => {
+        if (isSubmitSuccessful && isSuccessful) {
+            successToast();
+        } else if (isSubmitSuccessful && !isSuccessful) {
+            errorToast();
+        }
+    }, [isSubmitSuccessful, isSuccessful, successToast, errorToast]);
+
     return (
-        <form className="m-auto flex w-full max-w-440 flex-col items-center">
+        <form
+            className="m-auto flex w-full max-w-440 flex-col items-center"
+            onSubmit={handleSubmit(onSubmit)}
+        >
             <div className="flex w-full flex-col items-center gap-52 rounded-xl bg-white p-40 shadow-lg shadow-black-100/25">
-                <FaRegCommentAlt className="text-40 text-purple" />
+                <FaRegCommentAlt className="text-40 text-purple" aria-hidden />
                 <div className="flex w-full flex-col gap-24">
+                    <input
+                        type="hidden"
+                        value={import.meta.env.VITE_WEB_3_FORMS_ACCESS_KEY}
+                        {...register('access_key')}
+                    />
+                    <input type="hidden" value="Mission Control" {...register('from_name')} />
                     <div className="flex w-full flex-col gap-4">
                         <ContactFormLabel htmlFor="name" label="Name" />
-                        <ContactFormInput id="name" type="text" inputMode="text" />
+                        <input
+                            type="text"
+                            id="name"
+                            className="w-full border-1 border-black-100/5 bg-grey-200 p-8 text-18 text-black-100 focus:border-purple focus:outline-none focus-visible:transition-none"
+                            required
+                            autoCapitalize="off"
+                            autoComplete="false"
+                            autoCorrect="off"
+                            inputMode="text"
+                            {...register('name')}
+                        />
                     </div>
                     <div className="flex w-full flex-col gap-4">
                         <ContactFormLabel htmlFor="email" label="Email" />
-                        <ContactFormInput id="email" type="email" inputMode="email" />
+                        <input
+                            type="email"
+                            id="email"
+                            className="w-full border-1 border-black-100/5 bg-grey-200 p-8 text-18 text-black-100 focus:border-purple focus:outline-none focus-visible:transition-none"
+                            required
+                            autoCapitalize="off"
+                            autoComplete="false"
+                            autoCorrect="off"
+                            inputMode="email"
+                            {...register('email')}
+                        />
                     </div>
                     <div className="flex w-full flex-col gap-4">
                         <ContactFormLabel htmlFor="message" label="Message" />
                         <textarea
-                            name="message"
                             id="message"
                             className="w-full border-1 border-black-100/5 bg-grey-200 p-8 text-18 text-black-100 outline-none focus-visible:border-purple focus-visible:transition-none"
                             rows={8}
                             required
-                            autoCapitalize="off"
                             autoCorrect="off"
                             inputMode="text"
+                            {...register('message')}
                         ></textarea>
                     </div>
                 </div>
-                <Button className="button-primary" icon={<FaPaperPlane />} label="Submit" />
+                <button
+                    type="submit"
+                    className={isSubmitting ? 'button-submitting' : 'button-primary'}
+                    disabled={isSubmitting}
+                    aria-disabled={isSubmitting}
+                >
+                    {isSubmitting ? (
+                        <>
+                            <span className="loading-spinner"></span>
+                            Submitting...
+                        </>
+                    ) : (
+                        <span className="flex items-center gap-12">
+                            <FaPaperPlane />
+                            Submit
+                        </span>
+                    )}
+                </button>
             </div>
         </form>
     );

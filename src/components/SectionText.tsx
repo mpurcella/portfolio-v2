@@ -4,9 +4,7 @@ type SectionTextProps = {
 };
 
 const SectionText = ({ className, children }: SectionTextProps) => {
-    return (
-        <p className={`${className} text-center text-18 leading-normal md:text-20`}>{children}</p>
-    );
+    return <p className={`${className} text-18 leading-normal`}>{children}</p>;
 };
 
 export default SectionText;

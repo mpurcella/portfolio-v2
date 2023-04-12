@@ -9,13 +9,13 @@ const Hero = () => {
     return (
         <Section
             id="hero"
-            className="relative flex h-[calc(100vh-80.52px)] flex-col items-center justify-center md:h-[calc(100vh-92px)]"
+            className="relative flex h-[calc(100vh-80.52px)] flex-col items-center justify-center bg-black-100 md:h-[calc(100vh-92px)]"
         >
             <Wrapper width="md">
                 <>
                     <span className="sr-only">Social media and contact links</span>
                     <SocialList
-                        listClassName="flex-col gap-28 px-12 py-20 bg-white absolute left-0 top-1/2 md:-translate-y-[calc(50%+46px)] hidden lg:inline-flex"
+                        listClassName="flex-col gap-28 p-20 bg-white absolute left-0 top-1/2 md:-translate-y-[calc(50%+46px)] hidden lg:inline-flex"
                         linkClassName="social-link-secondary"
                     />
                 </>

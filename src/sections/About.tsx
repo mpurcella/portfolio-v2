@@ -8,12 +8,12 @@ import { FaRegCommentDots } from 'react-icons/fa';
 
 const About = () => {
     return (
-        <>
-            <Section id="about" className="bg-white">
-                <Wrapper width="md">
-                    <div className="flex flex-col items-center gap-52">
+        <Section id="about" className="bg-white">
+            <Wrapper width="xl">
+                <div className="divide-y-2 divide-black-100/20 md:grid md:grid-cols-2 md:gap-80 md:divide-none">
+                    <div className="flex flex-col items-center gap-52 pb-60 md:pb-0">
                         <SectionHeading className="text-black-100" label="Who am I?" />
-                        <div className="flex flex-col gap-28">
+                        <div className="flex flex-col gap-24">
                             <SectionText className="text-black-100">
                                 I&apos;m a frontend web developer who is passionate about creating
                                 digital experiences that are both visually stunning and enjoyable.
@@ -71,17 +71,13 @@ const About = () => {
                             label="Contact"
                         />
                     </div>
-                </Wrapper>
-            </Section>
-            <Section id="skills" className="bg-purple">
-                <Wrapper width="md">
-                    <div className="m-auto flex max-w-screen-md flex-col items-center gap-52">
-                        <SectionHeading className="text-white" label="My Skills" />
+                    <div className="flex flex-col gap-48 pt-60 md:pt-0">
+                        <SectionHeading className="text-black-100" label="What I Know" />
                         <SkillsList />
                     </div>
-                </Wrapper>
-            </Section>
-        </>
+                </div>
+            </Wrapper>
+        </Section>
     );
 };
 

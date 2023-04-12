@@ -5,7 +5,7 @@ type ContactFormLabelProps = {
 
 const ContactFormLabel = ({ htmlFor, label }: ContactFormLabelProps) => {
     return (
-        <label htmlFor={htmlFor} className="sr-only">
+        <label htmlFor={htmlFor} className="font-bold text-black-100">
             {label}
         </label>
     );

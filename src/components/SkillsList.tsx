@@ -88,17 +88,14 @@ const skills = [
 const SkillsList = () => {
     return (
         <ul className="flex flex-wrap justify-center gap-12">
-
             {skills.map((skill) => {
                 return (
                     <li
                         key={skill.id}
-                        className="flex items-center gap-12 rounded-lg bg-black-100 px-16 py-12 shadow-lg shadow-black-100/15"
+                        className="flex items-center gap-12  bg-purple px-16 py-8 shadow-lg shadow-black-100/20"
                     >
-                        <span className="text-18 text-white md:text-20">{skill.icon}</span>
-                        <span className="font-source-sans-pro text-white md:text-18">
-                            {skill.label}
-                        </span>
+                        <span className="text-18 text-white">{skill.icon}</span>
+                        <span className="font-source-sans-pro text-white">{skill.label}</span>
                     </li>
                 );
             })}

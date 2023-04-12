@@ -1,16 +1,19 @@
 type ContactFormInputProps = {
     id: string;
     type: string;
-    placeholder: string;
+    inputMode: 'text' | 'email';
 };
 
-const ContactFormInput = ({ id, type, placeholder }: ContactFormInputProps) => {
+const ContactFormInput = ({ id, type, inputMode }: ContactFormInputProps) => {
     return (
         <input
             id={id}
             type={type}
-            placeholder={placeholder}
-            className="w-full p-20 text-18 font-medium duration-200 ease-linear focus-visible:transition-none"
+            className="w-full border-1 border-black-100/5 bg-grey-200 p-8 text-18 text-black-100 focus:border-purple focus:outline-none focus-visible:transition-none"
+            required
+            autoCapitalize="off"
+            autoCorrect="off"
+            inputMode={inputMode}
         />
     );
 };

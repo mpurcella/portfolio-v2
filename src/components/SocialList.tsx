@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { FaGithub, FaLinkedinIn, FaEnvelope, FaCodepen } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaRegEnvelope, FaCodepen } from 'react-icons/fa';
 
 type SocialListProps = {
     listClassName: string;
@@ -30,7 +30,7 @@ const SocialList = ({ listClassName, linkClassName }: SocialListProps) => {
             id: uuidv4(),
             url: 'mailto:mjpurcella@gmail.com',
             label: 'Mike Purcella email address',
-            icon: <FaEnvelope />,
+            icon: <FaRegEnvelope />,
         },
     ];
     return (
@@ -38,12 +38,12 @@ const SocialList = ({ listClassName, linkClassName }: SocialListProps) => {
             {socialLinks.map((socialLink) => {
                 return (
                     <li key={socialLink.id}>
-                        <span className="sr-only">{socialLink.label}</span>
                         <a
                             href={socialLink.url}
                             className={linkClassName}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={socialLink.label}
                         >
                             {socialLink.icon}
                         </a>

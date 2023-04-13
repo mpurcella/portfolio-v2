@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-import HamburgerButton from '../components/HamburgerButton';
-import NavigationList from '../components/NavigationList';
-import SocialList from '../components/SocialList';
+import FocusLock from 'react-focus-lock';
 import PageLogo from '../components/PageLogo';
+import HamburgerButton from '../components/HamburgerButton';
+import NavigationMenu from '../components/NavigationMenu';
 
 const useMediaQuery = (mediaQuery: string) => {
     const [mql] = useState(() => window.matchMedia(mediaQuery));
@@ -57,6 +56,12 @@ const Header = () => {
         return () => document.body.classList.remove('overflow-hidden');
     }, [isNavOpen]);
 
+    const [focusDisabled, setFocusDisabled] = useState(false);
+
+    const handleFocusDisabled = () => {
+        setFocusDisabled((prevFocusDisabled) => !prevFocusDisabled);
+    };
+
     return (
         <header className="z-30 bg-black-100 p-28 md:px-60 md:py-28">
             <nav className="flex items-center justify-between">
@@ -69,25 +74,19 @@ const Header = () => {
                 >
                     <PageLogo className="pointer-events-none w-44 fill-white md:w-48" />
                 </Link>
-                <HamburgerButton isNavOpen={isNavOpen} onClick={handleIsNavOpen} />
-                <div
-                    className={classNames(
-                        'fixed top-0 z-30 flex h-screen w-full flex-col items-center justify-center gap-80 bg-black-200 navigation-list-transition md:static md:h-auto md:w-auto md:bg-transparent',
-                        {
-                            'right-0': isNavOpen,
-                            'right-full': !isNavOpen,
-                        },
-                    )}
-                >
-                    <NavigationList onClick={closeNav} />
-                    <>
-                        <span className="sr-only">Social media and contact links</span>
-                        <SocialList
-                            listClassName="flex gap-40 md:hidden"
-                            linkClassName="social-link-primary"
-                        />
-                    </>
-                </div>
+                <FocusLock disabled={!focusDisabled}>
+                    <HamburgerButton
+                        isNavOpen={isNavOpen}
+                        handleIsNavOpen={handleIsNavOpen}
+                        handleFocusDisabled={handleFocusDisabled}
+                    />
+                    <NavigationMenu
+                        isNavOpen={isNavOpen}
+                        onClick={closeNav}
+                        isScreenWide={isScreenWide}
+                        focusDisabled={focusDisabled}
+                    />
+                </FocusLock>
             </nav>
         </header>
     );

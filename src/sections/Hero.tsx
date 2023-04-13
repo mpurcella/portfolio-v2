@@ -17,6 +17,7 @@ const Hero = () => {
                     <SocialList
                         listClassName="flex-col gap-28 p-20 bg-white absolute left-0 top-1/2 md:-translate-y-[calc(50%+46px)] hidden lg:inline-flex"
                         linkClassName="social-link-secondary"
+                        tabIndex={0}
                     />
                 </>
                 <div className="relative -top-[40.26px] md:-top-[46px]">

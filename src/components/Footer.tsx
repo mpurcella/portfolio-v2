@@ -12,6 +12,7 @@ const Footer = () => {
                 <SocialList
                     listClassName="flex justify-center items-center gap-40"
                     linkClassName="social-link-primary"
+                    tabIndex={0}
                 />
             </>
             <p className="text-18 font-medium text-white">

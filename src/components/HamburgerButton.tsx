@@ -2,16 +2,25 @@ import classNames from 'classnames';
 
 type HamburgerButtonProps = {
     isNavOpen: boolean;
-    onClick: () => void;
+    handleIsNavOpen: () => void;
+    handleFocusDisabled?: () => void;
 };
 
-const HamburgerButton = ({ isNavOpen, onClick }: HamburgerButtonProps) => {
+const HamburgerButton = ({
+    isNavOpen,
+    handleIsNavOpen,
+    handleFocusDisabled,
+}: HamburgerButtonProps) => {
     return (
         <button
             type="button"
-            className="z-40 flex h-24 w-28 flex-col justify-around outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-purple md:hidden"
-            onClick={onClick}
-            aria-label={isNavOpen ? 'Close menu' : 'Open menu'}
+            className="relative z-40 flex h-24 w-28 flex-col justify-around outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-purple md:hidden"
+            onClick={() => {
+                handleIsNavOpen();
+                handleFocusDisabled?.();
+            }}
+            aria-label={isNavOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-controls="navigation-menu"
             aria-expanded={isNavOpen ? true : false}
         >
             <span

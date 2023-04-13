@@ -96,7 +96,7 @@ export default {
             60: '3.75rem',
             72: '4.5rem',
             80: '5rem',
-            120: '7.5rem',
+            100: '6.25rem',
             full: '100%',
             screen: '100vh',
         },

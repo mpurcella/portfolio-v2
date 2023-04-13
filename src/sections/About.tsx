@@ -4,7 +4,7 @@ import SectionHeading from '../components/SectionHeading';
 import SectionText from '../components/SectionText';
 import SkillsList from '../components/SkillsList';
 import Wrapper from '../components/Wrapper';
-import { FaRegCommentDots } from 'react-icons/fa';
+import { FaRegCommentAlt } from 'react-icons/fa';
 
 const About = () => {
     return (
@@ -66,7 +66,7 @@ const About = () => {
                         <ButtonLink
                             url="#contact"
                             className="button-link-secondary"
-                            icon={<FaRegCommentDots />}
+                            icon={<FaRegCommentAlt />}
                             reloadDocument={true}
                             label="Contact"
                         />

@@ -4,9 +4,10 @@ import { FaGithub, FaLinkedinIn, FaRegEnvelope, FaCodepen } from 'react-icons/fa
 type SocialListProps = {
     listClassName: string;
     linkClassName: string;
+    tabIndex: number;
 };
 
-const SocialList = ({ listClassName, linkClassName }: SocialListProps) => {
+const SocialList = ({ listClassName, linkClassName, tabIndex }: SocialListProps) => {
     const socialLinks = [
         {
             id: uuidv4(),
@@ -44,6 +45,7 @@ const SocialList = ({ listClassName, linkClassName }: SocialListProps) => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={socialLink.label}
+                            tabIndex={tabIndex}
                         >
                             {socialLink.icon}
                         </a>

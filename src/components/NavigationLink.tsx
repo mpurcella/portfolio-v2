@@ -4,10 +4,17 @@ type NavigationLinkProps = {
     url: string;
     label: string;
     onClick?: () => void;
+    tabIndex: number;
 };
-const NavigationLink = ({ url, label, onClick }: NavigationLinkProps) => {
+const NavigationLink = ({ url, label, onClick, tabIndex }: NavigationLinkProps) => {
     return (
-        <Link to={url} className="navigation-link-primary" reloadDocument onClick={onClick}>
+        <Link
+            to={url}
+            className="navigation-link-primary"
+            reloadDocument
+            onClick={onClick}
+            tabIndex={tabIndex}
+        >
             {label}
         </Link>
     );

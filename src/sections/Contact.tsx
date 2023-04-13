@@ -27,7 +27,7 @@ const Contact = () => {
                     <ContactForm successToast={successToast} errorToast={errorToast} />
                 </div>
             </Wrapper>
-            <ToastContainer autoClose={false} />
+            <ToastContainer />
         </Section>
     );
 };

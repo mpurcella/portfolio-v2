@@ -104,7 +104,7 @@ export default {
     plugins: [
         ({ addComponents, addUtilities, addBase }) => {
             const buttonBase =
-                'text-16 md:text-18 inline-flex px-32 py-16 transition-colors duration-200 ease-linear border-2 rounded-full font-source-sans-pro uppercase font-semibold outline-none focus-visible:transition-none';
+                'text-18 inline-flex px-32 py-16 transition-colors duration-200 ease-linear border-2 rounded-full font-source-sans-pro uppercase font-semibold outline-none focus-visible:transition-none';
 
             const navigationLinkBase =
                 'transition-colors duration-200 ease-linear outline-none focus-visible:outline-1  focus-visible:outline-purple focus-visible:transition-none';

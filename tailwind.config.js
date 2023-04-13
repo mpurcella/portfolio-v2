@@ -65,13 +65,9 @@ export default {
             white: '#f8f8f8',
         },
         fontSize: {
-            14: ['0.875rem'],
-            16: ['1rem'],
             18: ['1.125rem'],
             20: ['1.25rem'],
             24: ['1.5rem'],
-            26: ['1.625rem'],
-            28: ['1.75rem'],
             32: ['2rem'],
             36: ['2.25rem'],
             40: ['2.5rem'],
@@ -81,7 +77,6 @@ export default {
             0: '0rem',
             3: '0.188rem',
             4: '0.25rem',
-            6: '0.375rem',
             8: '.5rem',
             12: '.75rem',
             16: '1rem',
@@ -158,7 +153,7 @@ export default {
                             {},
                     },
                     '&-secondary': {
-                        [`@apply ${socialLinkBase} text-26 hover:text-purple text-black-100 focus-visible:outline-black-100 focus-visible:text-purple`]:
+                        [`@apply ${socialLinkBase} text-24 hover:text-purple text-black-100 focus-visible:outline-black-100 focus-visible:text-purple`]:
                             {},
                     },
                 },

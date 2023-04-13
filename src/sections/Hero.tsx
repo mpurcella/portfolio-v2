@@ -15,7 +15,7 @@ const Hero = () => {
                 <>
                     <span className="sr-only">Social media and contact links</span>
                     <SocialList
-                        listClassName="flex-col gap-28 p-20 bg-white absolute left-0 top-1/2 md:-translate-y-[calc(50%+46px)] hidden lg:inline-flex"
+                        listClassName="flex-col gap-28 p-16 bg-white absolute left-0 top-1/2 md:-translate-y-[calc(50%+46px)] hidden lg:inline-flex"
                         linkClassName="social-link-secondary"
                         tabIndex={0}
                     />

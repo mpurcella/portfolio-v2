@@ -9,7 +9,7 @@ const Hero = () => {
     return (
         <Section
             id="hero"
-            className="relative flex h-[calc(100vh-80.52px)] flex-col items-center justify-center bg-black-100 md:h-[calc(100vh-92px)]"
+            className="relative flex h-[calc(100dvh-80.52px)] flex-col items-center justify-center bg-black-100 md:h-[calc(100vh-92px)]"
         >
             <Wrapper width="md">
                 <>

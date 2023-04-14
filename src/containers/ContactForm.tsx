@@ -82,7 +82,7 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
                 <div className="flex w-full flex-col gap-24">
                     <input
                         type="hidden"
-                        value={import.meta.env.VITE_WEB_3_FORMS_ACCESS_KEY}
+                        value="a17d3cc8-b9d7-4c89-a622-aec5c8c5171e"
                         {...register('access_key')}
                     />
                     <input type="hidden" value="Mission Control" {...register('from_name')} />

@@ -1,13 +1,13 @@
 import { v4 as uuidv4 } from 'uuid';
 import Project from './Project';
-import HeartLineMockupPng from '/images/mockups/png/heart-line.png';
-import JukeboxMonkeyRecordsMockupPng from '/images/mockups/png/jukebox-monkey-records.png';
-import McuGuideMockupPng from '/images/mockups/png/mcu-guide.png';
-import ThePopcornPlaceMockupPng from '/images/mockups/png/the-popcorn-place.png';
-import HeartLineMockupWebp from '/images/mockups/webp/heart-line.webp';
-import JukeboxMonkeyRecordsMockupWebp from '/images/mockups/webp/jukebox-monkey-records.webp';
-import McuGuideMockupWebp from '/images/mockups/webp/mcu-guide.webp';
-import ThePopcornPlaceMockupWebp from '/images/mockups/webp/the-popcorn-place.webp';
+import HeartLineMockupPng from '../assets/images/png/heart-line.png';
+import JukeboxMonkeyRecordsMockupPng from '../assets/images/png/jukebox-monkey-records.png';
+import McuGuideMockupPng from '../assets/images/png/mcu-guide.png';
+import ThePopcornPlaceMockupPng from '../assets/images/png/the-popcorn-place.png';
+import HeartLineMockupWebp from '../assets/images/webp/heart-line.webp';
+import JukeboxMonkeyRecordsMockupWebp from '../assets/images/webp/jukebox-monkey-records.webp';
+import McuGuideMockupWebp from '../assets/images/webp/mcu-guide.webp';
+import ThePopcornPlaceMockupWebp from '../assets/images/webp/the-popcorn-place.webp';
 
 const projects = [
     {

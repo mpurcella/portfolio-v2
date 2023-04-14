@@ -3,6 +3,7 @@ import Section from '../components/Section';
 import SectionHeading from '../components/SectionHeading';
 import Wrapper from '../components/Wrapper';
 import ContactForm from '../containers/ContactForm';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
     const successToast = () => {

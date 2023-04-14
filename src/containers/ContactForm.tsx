@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import ContactFormLabel from '../components/ContactFormLabel';
-import { FaRegCommentAlt, FaPaperPlane } from 'react-icons/fa';
-import 'react-toastify/dist/ReactToastify.css';
+import { Chat, RocketLaunch } from '@phosphor-icons/react';
 
 type FormValues = {
     access_key: string;
@@ -78,7 +77,9 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
             onSubmit={handleSubmit(onSubmit)}
         >
             <div className="flex w-full flex-col items-center gap-52 rounded-xl bg-white p-40 shadow-lg shadow-black-100/25">
-                <FaRegCommentAlt className="text-40 text-purple" aria-hidden />
+                <span className="text-48 text-purple">
+                    <Chat weight="bold" />
+                </span>
                 <div className="flex w-full flex-col gap-24">
                     <input
                         type="hidden"
@@ -139,10 +140,12 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
                             Submitting...
                         </>
                     ) : (
-                        <span className="flex items-center gap-12">
-                            <FaPaperPlane />
+                        <>
+                            <span className="text-20">
+                                <RocketLaunch weight="bold" />
+                            </span>
                             Submit
-                        </span>
+                        </>
                     )}
                 </button>
             </div>

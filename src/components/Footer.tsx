@@ -1,12 +1,14 @@
-import PageLogo from './PageLogo';
 import SocialList from './SocialList';
+import { ReactComponent as MLogo } from '../assets/icons/m-logo.svg';
 
 const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
         <footer className="flex flex-col items-center gap-52 bg-black-100 px-28 py-72 md:px-60">
-            <PageLogo className="pointer-events-none w-52 fill-white" />
+            <span className="w-52 text-white">
+                <MLogo className="pointer-events-none" />
+            </span>
             <>
                 <span className="sr-only">Social media and contact links</span>
                 <SocialList

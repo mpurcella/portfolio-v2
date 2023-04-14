@@ -4,7 +4,7 @@ import SectionHeading from '../components/SectionHeading';
 import SectionText from '../components/SectionText';
 import SkillsList from '../components/SkillsList';
 import Wrapper from '../components/Wrapper';
-import { FaRegCommentAlt } from 'react-icons/fa';
+import { Chat } from '@phosphor-icons/react';
 
 const About = () => {
     return (
@@ -21,8 +21,8 @@ const About = () => {
                                 soon realized that it was where my&nbsp;passion&nbsp;lay.
                             </SectionText>
                             <SectionText className="text-black-100">
-                                In my short career thus far, I&apos;ve had the privilege of
-                                contributing to websites such as the{' '}
+                                In my career thus far, I&apos;ve had the privilege of contributing
+                                to websites such as the{' '}
                                 <a
                                     href="https://www.nationalparks.org/"
                                     className="navigation-link-secondary"
@@ -66,9 +66,9 @@ const About = () => {
                         <ButtonLink
                             url="#contact"
                             className="button-link-secondary"
-                            icon={<FaRegCommentAlt />}
-                            reloadDocument={true}
+                            icon={<Chat weight="bold" />}
                             label="Contact"
+                            reloadDocument={true}
                         />
                     </div>
                     <div className="flex flex-col gap-48 pt-60 md:pt-0">

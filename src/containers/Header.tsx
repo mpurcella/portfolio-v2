@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FocusLock from 'react-focus-lock';
-import PageLogo from '../components/PageLogo';
 import HamburgerButton from '../components/HamburgerButton';
 import NavigationMenu from '../components/NavigationMenu';
+import { ReactComponent as MLogo } from '../assets/icons/m-logo.svg';
 
 const useMediaQuery = (mediaQuery: string) => {
     const [mql] = useState(() => window.matchMedia(mediaQuery));
@@ -67,12 +67,12 @@ const Header = () => {
             <nav className="flex items-center justify-between">
                 <Link
                     to="/"
-                    className="z-30 outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-purple"
+                    className="z-30 w-44 text-white outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-purple md:w-48"
                     onClick={closeNav}
                     onFocus={scrollToTop}
-                    aria-label="Mike Purcella homepage"
+                    aria-label="Homepage"
                 >
-                    <PageLogo className="pointer-events-none w-44 fill-white md:w-48" />
+                    <MLogo className="pointer-events-none" />
                 </Link>
                 <FocusLock disabled={!focusDisabled}>
                     <HamburgerButton

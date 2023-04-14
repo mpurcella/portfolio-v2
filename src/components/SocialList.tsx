@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { FaGithub, FaLinkedinIn, FaRegEnvelope, FaCodepen } from 'react-icons/fa';
+import { GithubLogo, LinkedinLogo, CodepenLogo, Envelope } from '@phosphor-icons/react';
 
 type SocialListProps = {
     listClassName: string;
@@ -13,25 +13,25 @@ const SocialList = ({ listClassName, linkClassName, tabIndex }: SocialListProps)
             id: uuidv4(),
             url: 'https://github.com/mpurcella',
             label: 'Mike Purcella on GitHub',
-            icon: <FaGithub />,
+            icon: <GithubLogo />,
         },
         {
             id: uuidv4(),
             url: 'https://www.linkedin.com/in/mpurcella/',
             label: 'Mike Purcella on LinkedIn',
-            icon: <FaLinkedinIn />,
+            icon: <LinkedinLogo />,
         },
         {
             id: uuidv4(),
             url: 'https://codepen.io/mpurcella',
             label: 'Mike Purcella on CodePen',
-            icon: <FaCodepen />,
+            icon: <CodepenLogo />,
         },
         {
             id: uuidv4(),
             url: 'mailto:mjpurcella@gmail.com',
             label: 'Mike Purcella email address',
-            icon: <FaRegEnvelope />,
+            icon: <Envelope />,
         },
     ];
     return (

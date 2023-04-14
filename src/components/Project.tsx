@@ -1,4 +1,4 @@
-import { FaExternalLinkAlt } from 'react-icons/fa';
+import { ArrowSquareOut } from '@phosphor-icons/react';
 
 type ProjectProps = {
     imgUrlWebp: string;
@@ -15,16 +15,16 @@ const Project = ({ imgUrlWebp, imgUrlPng, alt, name, description, url }: Project
             <picture>
                 <source srcSet={imgUrlWebp} type="image/webp" />
                 <source srcSet={imgUrlPng} type="image/png" />
-                <img src={imgUrlPng} alt={alt} />
+                <img src={imgUrlPng} alt={alt} loading="lazy" />
             </picture>
             <div className="flex h-full flex-col items-center justify-center gap-28">
-                <h3 className="text-center text-24 font-extrabold">{name}</h3>
+                <h3 className="text-center text-24 font-bold">{name}</h3>
                 <p className="text-18 leading-normal">{description}</p>
                 <a href={url} className="button-link-secondary">
-                    <span className="flex items-center gap-12">
-                        <FaExternalLinkAlt />
-                        View Site
+                    <span className="text-20">
+                        <ArrowSquareOut weight="bold" />
                     </span>
+                    View Site
                 </a>
             </div>
         </div>

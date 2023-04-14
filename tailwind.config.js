@@ -68,9 +68,11 @@ export default {
             18: ['1.125rem'],
             20: ['1.25rem'],
             24: ['1.5rem'],
+            28: ['1.75rem'],
             32: ['2rem'],
             36: ['2.25rem'],
             40: ['2.5rem'],
+            48: ['3rem'],
             60: ['3.75rem'],
         },
         spacing: {
@@ -99,13 +101,13 @@ export default {
     plugins: [
         ({ addComponents, addUtilities, addBase }) => {
             const buttonBase =
-                'text-18 inline-flex px-32 py-16 transition-colors duration-200 ease-linear border-2 rounded-full font-source-sans-pro uppercase font-semibold outline-none focus-visible:transition-none';
+                'inline-flex items-center gap-12 px-32 py-16 transition-colors duration-200 ease-linear border-2 rounded-full font-source-sans-pro uppercase font-semibold outline-none focus-visible:bg-purple focus-visible:transition-none';
 
             const navigationLinkBase =
                 'transition-colors duration-200 ease-linear outline-none focus-visible:outline-1  focus-visible:outline-purple focus-visible:transition-none';
 
             const socialLinkBase =
-                'block transition-colors duration-200 ease-linear outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:transition-none';
+                'block text-28 transition-colors duration-200 ease-linear outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:transition-none';
 
             addComponents({
                 '.button': {
@@ -121,11 +123,11 @@ export default {
                 },
                 '.button-link': {
                     '&-primary': {
-                        [`@apply ${buttonBase} border-white text-white hover:bg-purple hover:border-purple focus-visible:text-white focus-visible:border-purple focus-visible:bg-purple`]:
+                        [`@apply ${buttonBase} border-white text-white hover:bg-purple hover:border-purple focus-visible:border-purple`]:
                             {},
                     },
                     '&-secondary': {
-                        [`@apply ${buttonBase} border-purple text-purple hover:text-white hover:bg-purple focus-visible:text-white focus-visible:bg-purple`]:
+                        [`@apply ${buttonBase} border-purple text-purple hover:text-white hover:bg-purple focus-visible:text-white`]:
                             {},
                     },
                 },
@@ -149,11 +151,11 @@ export default {
                 },
                 '.social-link': {
                     '&-primary': {
-                        [`@apply ${socialLinkBase} text-24 text-grey-300 hover:text-white focus-visible:outline-purple focus-visible:text-white`]:
+                        [`@apply ${socialLinkBase} text-grey-300 hover:text-white focus-visible:outline-purple focus-visible:text-white`]:
                             {},
                     },
                     '&-secondary': {
-                        [`@apply ${socialLinkBase} text-24 hover:text-purple text-black-100 focus-visible:outline-black-100 focus-visible:text-purple`]:
+                        [`@apply ${socialLinkBase} hover:text-purple text-black-100 focus-visible:outline-black-100 focus-visible:text-purple`]:
                             {},
                     },
                 },

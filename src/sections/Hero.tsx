@@ -3,7 +3,7 @@ import Wrapper from '../components/Wrapper';
 import SocialList from '../components/SocialList';
 import ButtonLink from '../components/ButtonLink';
 import MouseIcon from '../components/MouseIcon';
-import { FaCog } from 'react-icons/fa';
+import { Code } from '@phosphor-icons/react';
 
 const Hero = () => {
     return (
@@ -36,9 +36,9 @@ const Hero = () => {
                         <ButtonLink
                             url="#projects"
                             className="button-link-primary"
-                            reloadDocument={true}
-                            icon={<FaCog />}
+                            icon={<Code weight="bold" />}
                             label="Projects"
+                            reloadDocument={true}
                         />
                     </div>
                 </div>

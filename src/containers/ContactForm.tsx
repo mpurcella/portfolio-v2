@@ -81,11 +81,7 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
             <div className="flex w-full flex-col items-center gap-52 rounded-xl bg-white p-40 shadow-lg shadow-black-100/25">
                 <FaRegCommentAlt className="text-40 text-purple" aria-hidden />
                 <div className="flex w-full flex-col gap-24">
-                    <input
-                        type="hidden"
-                        value="a17d3cc8-b9d7-4c89-a622-aec5c8c5171e"
-                        {...register(accessKey)}
-                    />
+                    <input type="hidden" value={accessKey} {...register('access_key')} />
                     <input type="hidden" value="Mission Control" {...register('from_name')} />
                     <div className="flex w-full flex-col gap-4">
                         <ContactFormLabel htmlFor="name" label="Name" />

@@ -24,7 +24,7 @@ const Contact = () => {
             <Wrapper width="sm">
                 <div className="flex flex-col gap-52">
                     <SectionHeading className="text-white" label="Lets Connect!" />
-                    <ContactForm />
+                    <ContactForm successToast={successToast} errorToast={errorToast} />
                 </div>
             </Wrapper>
             <ToastContainer />

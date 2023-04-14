@@ -78,7 +78,7 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
         >
             <div className="flex w-full flex-col items-center gap-52 rounded-xl bg-white p-40 shadow-lg shadow-black-100/25">
                 <span className="text-48 text-purple">
-                    <Chat weight="bold" />
+                    <Chat weight="bold" aria-hidden />
                 </span>
                 <div className="flex w-full flex-col gap-24">
                     <input

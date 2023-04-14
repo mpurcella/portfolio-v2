@@ -18,6 +18,7 @@ type ContactForm = {
 };
 
 const ContactForm = ({ successToast, errorToast }: ContactForm) => {
+    const accessKey = import.meta.env.VITE_WEB_3_FORMS_ACCESS_KEY;
     const [isSuccessful, setIsSuccessful] = useState(false);
 
     const {
@@ -83,7 +84,7 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
                     <input
                         type="hidden"
                         value="a17d3cc8-b9d7-4c89-a622-aec5c8c5171e"
-                        {...register('access_key')}
+                        {...register(accessKey)}
                     />
                     <input type="hidden" value="Mission Control" {...register('from_name')} />
                     <div className="flex w-full flex-col gap-4">

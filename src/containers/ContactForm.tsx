@@ -76,7 +76,7 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
             className="m-auto flex w-full max-w-440 flex-col items-center"
             onSubmit={handleSubmit(onSubmit)}
         >
-            <div className="flex w-full flex-col items-center gap-52 rounded-xl bg-white p-40 shadow-lg shadow-black-100/25">
+            <div className="flex w-full flex-col items-center gap-52 rounded-xl bg-white px-20 py-40 shadow-lg shadow-black-100/25">
                 <span className="text-48 text-purple">
                     <Chat weight="bold" aria-hidden />
                 </span>

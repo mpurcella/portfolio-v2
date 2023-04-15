@@ -5,83 +5,83 @@
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 100;
-    src: url('./fonts/proxima-nova/ProximaNovaACond-Thin.woff2');
+    src: url('./assets/fonts/proxima-nova/ProximaNovaACond-Thin.woff2');
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 300;
-    src: url('./fonts/proxima-nova/ProximaNovaACond-Light.woff2');
+    src: url('./assets/fonts/proxima-nova/ProximaNovaACond-Light.woff2');
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 400;
-    src: url('./fonts/proxima-nova/ProximaNovaACond-Regular.woff2');
+    src: url('./assets/fonts/proxima-nova/ProximaNovaACond-Regular.woff2');
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 500;
-    src: url('./fonts/proxima-nova/ProximaNovaACond-Medium.woff2');
+    src: url('./assets/fonts/proxima-nova/ProximaNovaACond-Medium.woff2');
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 600;
-    src: url('./fonts/proxima-nova/ProximaNovaACond-Semibold.woff2');
+    src: url('./assets/fonts/proxima-nova/ProximaNovaACond-Semibold.woff2');
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 700;
-    src: url('./fonts/proxima-nova/ProximaNovaACond-Bold.woff2');
+    src: url('./assets/fonts/proxima-nova/ProximaNovaACond-Bold.woff2');
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 800;
-    src: url('./fonts/proxima-nova/ProximaNovaACond-Extrabld.woff2');
+    src: url('./assets/fonts/proxima-nova/ProximaNovaACond-Extrabld.woff2');
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 900;
-    src: url('./fonts/proxima-nova/ProximaNovaACond-Black.woff2');
+    src: url('./assets/fonts/proxima-nova/ProximaNovaACond-Black.woff2');
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
     font-weight: 200;
-    src: url('./fonts/source-sans-pro/SourceSansPro-ExtraLight.woff2');
+    src: url('./assets/fonts/source-sans-pro/SourceSansPro-ExtraLight.woff2');
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
     font-weight: 300;
-    src: url('./fonts/source-sans-pro/SourceSansPro-Light.woff2');
+    src: url('./assets/fonts/source-sans-pro/SourceSansPro-Light.woff2');
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
     font-weight: 400;
-    src: url('./fonts/source-sans-pro/SourceSansPro-Regular.woff2');
+    src: url('./assets/fonts/source-sans-pro/SourceSansPro-Regular.woff2');
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
     font-weight: 600;
-    src: url('./fonts/source-sans-pro/SourceSansPro-SemiBold.woff2');
+    src: url('./assets/fonts/source-sans-pro/SourceSansPro-SemiBold.woff2');
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
     font-weight: 700;
-    src: url('./fonts/source-sans-pro/SourceSansPro-Bold.woff2');
+    src: url('./assets/fonts/source-sans-pro/SourceSansPro-Bold.woff2');
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
     font-weight: 900;
-    src: url('./fonts/source-sans-pro/SourceSansPro-Black.woff2');
+    src: url('./assets/fonts/source-sans-pro/SourceSansPro-Black.woff2');
 }

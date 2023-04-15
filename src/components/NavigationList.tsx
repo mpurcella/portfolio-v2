@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import NavigationLink from './NavigationLink';
+import Resume from '../assets/documents/mike_purcella_resume.pdf';
 
 type NavigationListProps = {
     onClick: () => void;
@@ -50,7 +51,7 @@ const NavigationList = ({ onClick, isScreenWide, focusDisabled }: NavigationList
             })}
             <li key={uuidv4()}>
                 <a
-                    href="/documents/mike_purcella_resume.pdf"
+                    href={Resume}
                     className="inline-flex rounded-lg bg-purple px-16 py-8 text-24 font-medium lowercase text-white outline-none transition-colors duration-200 ease-linear hover:bg-red focus-visible:bg-red focus-visible:transition-none md:text-20"
                     target="_blank"
                     rel="noopener noreferrer"

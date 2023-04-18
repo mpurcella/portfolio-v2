@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import FocusLock from 'react-focus-lock';
 import HamburgerButton from '../components/HamburgerButton';
 import NavigationMenu from '../components/NavigationMenu';
-import { ReactComponent as MLogo } from '../assets/icons/m-logo.svg';
+import { ReactComponent as PageLogo } from '../assets/icons/page-logo.svg';
 
 const useMediaQuery = (mediaQuery: string) => {
     const [mql] = useState(() => window.matchMedia(mediaQuery));
@@ -42,12 +41,6 @@ const Header = () => {
         }
     }, [isScreenWide]);
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-        });
-    };
-
     useEffect(() => {
         if (isNavOpen) {
             document.body.classList.add('overflow-hidden');
@@ -65,15 +58,9 @@ const Header = () => {
     return (
         <header className="z-30 bg-black-100 p-28 md:px-60 md:py-28">
             <nav className="flex items-center justify-between">
-                <Link
-                    to="/"
-                    className="z-30 w-44 text-white outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-purple md:w-48"
-                    onClick={closeNav}
-                    onFocus={scrollToTop}
-                    aria-label="Homepage"
-                >
-                    <MLogo className="pointer-events-none" />
-                </Link>
+                <span className="z-30 w-44 text-white">
+                    <PageLogo className="pointer-events-none" aria-hidden />
+                </span>
                 <FocusLock disabled={!focusDisabled}>
                     <HamburgerButton
                         isNavOpen={isNavOpen}

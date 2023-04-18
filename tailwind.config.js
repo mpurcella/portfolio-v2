@@ -107,7 +107,7 @@ export default {
                 'transition-colors duration-200 ease-linear outline-none focus-visible:outline-1  focus-visible:outline-purple focus-visible:transition-none';
 
             const socialLinkBase =
-                'block text-28 transition-colors duration-200 ease-linear outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:transition-none';
+                'block text-24 transition-colors duration-200 ease-linear outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:transition-none';
 
             addComponents({
                 '.button': {

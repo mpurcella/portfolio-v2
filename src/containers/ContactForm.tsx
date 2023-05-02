@@ -78,7 +78,7 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
         >
             <div className="flex w-full flex-col items-center gap-52 rounded-xl bg-white px-20 py-40 shadow-lg shadow-black-100/25">
                 <span className="text-48 text-purple">
-                    <Chat weight="bold" aria-hidden />
+                    <Chat weight="regular" aria-hidden />
                 </span>
                 <div className="flex w-full flex-col gap-24">
                     <input
@@ -92,7 +92,7 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
                         <input
                             type="text"
                             id="name"
-                            className="w-full border-1 border-black-100/5 bg-grey-200 p-8 text-18 text-black-100 focus:border-purple focus:outline-none focus-visible:transition-none"
+                            className="w-full rounded-md border-1 border-black-100/5 bg-grey-200 p-8 text-18 text-black-100 focus:border-purple focus:outline-none focus-visible:transition-none"
                             required
                             autoCapitalize="off"
                             autoComplete="false"
@@ -106,7 +106,7 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
                         <input
                             type="email"
                             id="email"
-                            className="w-full border-1 border-black-100/5 bg-grey-200 p-8 text-18 text-black-100 focus:border-purple focus:outline-none focus-visible:transition-none"
+                            className="w-full rounded-md border-1 border-black-100/5 bg-grey-200 p-8 text-18 text-black-100 focus:border-purple focus:outline-none focus-visible:transition-none"
                             required
                             autoCapitalize="off"
                             autoComplete="false"
@@ -119,7 +119,7 @@ const ContactForm = ({ successToast, errorToast }: ContactForm) => {
                         <ContactFormLabel htmlFor="message" label="Message" />
                         <textarea
                             id="message"
-                            className="w-full border-1 border-black-100/5 bg-grey-200 p-8 text-18 text-black-100 outline-none focus-visible:border-purple focus-visible:transition-none"
+                            className="w-full rounded-md border-1 border-black-100/5 bg-grey-200 p-8 text-18 text-black-100 outline-none focus-visible:border-purple focus-visible:transition-none"
                             rows={8}
                             required
                             autoCorrect="off"

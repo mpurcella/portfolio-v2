@@ -20,7 +20,12 @@ const Project = ({ imgUrlWebp, imgUrlPng, alt, name, description, url }: Project
             <div className="flex h-full flex-col items-center justify-center gap-28">
                 <h3 className="text-center text-24 font-bold">{name}</h3>
                 <p className="text-18 leading-normal">{description}</p>
-                <a href={url} className="button-link-secondary">
+                <a
+                    href={url}
+                    className="button-link-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <span className="text-20">
                         <ArrowSquareOut weight="bold" />
                     </span>

@@ -20,9 +20,11 @@ const Footer = () => {
             <p className="text-18 font-medium text-white">
                 Created by{' '}
                 <a
-                    href="https://github.com/mpurcella/portfolio-v2"
+                    href="https://github.com/mpurcella"
                     className="navigation-link-tertiary"
-                    aria-label="View code on GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Mike Purcella on GitHub"
                 >
                     me
                 </a>{' '}
